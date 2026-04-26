@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>МСС — Маркетинговые сайты со смыслом | Сайты для твёрдого бизнеса от 25 000 ₽</title>
-<meta name="description" content="Создаём продающие сайты для стоматологий, заводов, клиник, строительных компаний и других твёрдых бизнесов. Каждый элемент — цвет, текст, свет — работает на продажу. От 25 000 ₽. Опыт в маркетинге 5 лет.">
+<meta name="description" content="Создаём продающие сайты для стоматологий, заводов, клиник, строительных компаний и других твёрдых бизнесов. Каждый элемент работает на продажу. От 25 000 ₽. Опыт в маркетинге 5 лет.">
 <meta name="keywords" content="создание сайтов для бизнеса, продающий лендинг, сайт для стоматологии, сайт для завода, сайт для клиники, маркетинговый сайт, разработка лендинга, сайт под ключ, МСС, маркетинговые сайты со смыслом, сайт для производства, сайт для металлообработки, сайт для ресторана, сайт для отеля">
 <meta property="og:title" content="МСС — Сайты, которые продают, а не просто существуют">
 <meta property="og:description" content="Упаковываем твёрдый бизнес в сайт, где каждый элемент ведёт к цели. От 25 000 ₽.">
@@ -212,13 +212,6 @@
     margin-top: 0.2rem;
   }
 
-  /* DIAGONAL DIVIDER */
-  .divider {
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(to bottom right, var(--bg) 49%, var(--bg2) 50%);
-  }
-
   /* SECTIONS */
   section {
     position: relative;
@@ -265,6 +258,29 @@
     margin-bottom: 3rem;
     font-size: 1.05rem;
   }
+
+  /* TOP QUOTE (после героя) */
+  .top-quote-section {
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .top-quote {
+    font-family: 'Golos Text', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .top-quote em { font-style: normal; color: var(--accent); }
 
   /* PROBLEM SECTION */
   .problem-section { background: var(--bg2); }
@@ -456,7 +472,14 @@
     margin-bottom: 0.3rem;
   }
 
-  .price-note { font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; }
+  .price-note {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
 
   .price-includes {
     display: flex;
@@ -490,6 +513,62 @@
     padding: 0.4rem 1rem;
     border-radius: 4px;
     margin-bottom: 1.5rem;
+  }
+
+  /* MANIFEST SECTION */
+  .manifest-section { background: var(--bg2); }
+
+  .manifest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .manifest-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2.2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.2s;
+  }
+
+  .manifest-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .manifest-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .manifest-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1;
+  }
+
+  .manifest-card h3 {
+    font-family: 'Golos Text', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .manifest-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-style: italic;
   }
 
   /* FAQ */
@@ -617,7 +696,7 @@
   }
 
   form input, form textarea, form select {
-    background: var(--bg2);
+    background: var(--bg);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 6px;
     color: var(--text);
@@ -686,28 +765,99 @@
     margin-bottom: 0.5rem;
   }
 
-  /* QUOTE BLOCK */
+  /* QUOTE SECTION (фото + цитата) */
   .quote-section {
-    background: var(--bg3);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 4rem 2rem;
-    text-align: center;
+    background: var(--bg);
+    padding: 6rem 2rem;
     position: relative;
     z-index: 1;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
-  .big-quote {
-    font-family: 'Golos Text', sans-serif;
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    font-weight: 600;
-    max-width: 800px;
+  .quote-wrap {
+    max-width: 850px;
     margin: 0 auto;
-    line-height: 1.5;
-    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 3rem;
   }
 
-  .big-quote em { font-style: normal; color: var(--accent); }
+  .quote-photo {
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: var(--bg3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.3;
+    overflow: hidden;
+  }
+
+  .quote-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .quote-text {
+    flex: 1;
+  }
+
+  .quote-text blockquote {
+    font-family: 'Golos Text', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
+  }
+
+  .quote-text blockquote em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .quote-author {
+    color: var(--accent);
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.15rem;
+  }
+
+  .quote-role {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 600px) {
+    .quote-wrap {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
+    .quote-photo {
+      width: 110px;
+      height: 110px;
+    }
+    .quote-text blockquote {
+      font-size: 1rem;
+    }
+  }
 
   /* STICKY CTA (mobile) */
   .sticky-cta {
@@ -813,40 +963,9 @@
 
   .step-desc { font-size: 0.85rem; color: var(--muted); }
 
-  /* GUARANTEE */
-  .guarantee-section { background: var(--bg2); }
-
-  .guarantee-box {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2.5rem;
-    max-width: 700px;
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-
-  .guarantee-icon {
-    font-size: 3rem;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-
-  .guarantee-box h3 {
-    font-family: 'Golos Text', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.7rem;
-    color: var(--accent);
-  }
-
-  .guarantee-box p { font-size: 0.9rem; color: var(--muted); }
-
   @media (max-width: 500px) {
-    .guarantee-box { flex-direction: column; gap: 1rem; }
     .hero-proof { gap: 1.5rem; }
-    .problem-grid, .solution-grid { grid-template-columns: 1fr; }
+    .problem-grid, .solution-grid, .manifest-grid { grid-template-columns: 1fr; }
     .form-wrap { grid-template-columns: 1fr; }
     nav { padding: 1rem; }
     .price-box { padding: 1.8rem; }
@@ -869,7 +988,7 @@
   <div class="hero">
     <div class="hero-eyebrow">Маркетинговые сайты со смыслом</div>
     <h1>Сайт, который<br><em>продаёт</em> ваш бизнес,<br>а не просто<br>существует</h1>
-    <p class="hero-sub">Упаковываем твёрдый бизнес в сайт, где каждый элемент — цвет, текст, свет — работает на одну цель: заявку, продажу, доверие.</p>
+    <p class="hero-sub">Упаковываем твёрдый бизнес в сайт, где каждый элемент работает на одну цель: заявку, продажу, доверие.</p>
     <div class="hero-cta-row">
       <a href="#contact" class="btn-primary">Хочу такой сайт →</a>
       <a href="#what" class="btn-ghost">Что входит в услугу</a>
@@ -891,10 +1010,10 @@
   </div>
 </section>
 
-<!-- QUOTE -->
-<div class="quote-section">
-  <p class="big-quote">
-    Для сайта металлообработки: мы не просто покажем ваш станок — мы покажем <em>вашу точность, надёжность и силу</em>. Так, чтобы заказчик захотел работать именно с вами.
+<!-- TOP QUOTE -->
+<div class="top-quote-section">
+  <p class="top-quote">
+    Цифровой актив и стратегия представления вашего бизнеса. <em>Инвестиция, которая работает на вас</em>.
   </p>
 </div>
 
@@ -903,7 +1022,7 @@
   <div class="container">
     <div class="section-label">Проблема</div>
     <h2>Почему обычные сайты<br><em>не работают</em></h2>
-    <p class="section-desc">Большинство сайтов — это красивые обложки без смысла. Посетитель заходит и уходит, не поняв, почему должен выбрать именно вас.</p>
+    <p class="section-desc">Большинство сайтов не решают задачи бизнеса. Они не отвечают на вопросы клиентов и не ведут его к решению.</p>
     <div class="problem-grid">
       <div class="problem-card">
         <div class="problem-icon">👁️</div>
@@ -921,9 +1040,9 @@
         <p>«Мы — надёжная компания с большим опытом» — это пишут все. Ваши реальные преимущества спрятаны или не сформулированы.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">📱</div>
-        <h3>Не работает на телефоне</h3>
-        <p>60%+ трафика — с мобильных. Если сайт неудобен с телефона, вы теряете больше половины клиентов.</p>
+        <div class="problem-icon">🎯</div>
+        <h3>Отсутствие стратегии</h3>
+        <p>Сайт создан без понимания, кто ваш клиент и что ему важно. В итоге — он не видит причин выбрать именно вас и уходит.</p>
       </div>
     </div>
   </div>
@@ -933,38 +1052,58 @@
 <section class="solution-section" id="what">
   <div class="container">
     <div class="section-label">Решение</div>
-    <h2>Что такое<br><em>МСС</em> — маркетинговый<br>сайт со смыслом</h2>
-    <p class="section-desc">Это не просто красивая страница. Это система, где каждый элемент работает на результат.</p>
+    <h2><em>Инженерный подход</em><br>к сайту</h2>
+    <p class="section-desc">Мы относимся к сайту как к точному механизму. Каждый элемент — это деталь, которая выполняет свою функцию.</p>
     <div class="solution-grid">
       <div class="solution-card">
         <div class="solution-num">01</div>
-        <h3>Главный экран с ударом</h3>
-        <p>Первые 3 секунды решают всё. Мы создаём экран, который захватывает внимание и мгновенно объясняет ценность вашего бизнеса.</p>
+        <h3>Инженерный подход к сайту</h3>
+        <p>Заголовок мгновенно привлекает внимание, как хорошая вывеска. Подзаголовок удерживает его, давая суть за 3 секунды. Кнопка ведёт к целевому действию без лишних раздумий. Ничего лишнего — всё работает на результат.</p>
       </div>
       <div class="solution-card">
         <div class="solution-num">02</div>
-        <h3>Смысловой текст</h3>
-        <p>Не «о нас», а «для вас». Каждое слово написано с позиции клиента: его боль → ваше решение → его выгода.</p>
+        <h3>Психология цвета, которая работает на вас</h3>
+        <p>Цвет — ваш безмолвный продавец. Глубокие, статусные тона вызывают ощущение надёжности. Цветовые акценты сигнализируют: «здесь ценят качество». Клиент просто чувствует: «Этим людям можно доверять».</p>
       </div>
       <div class="solution-card">
         <div class="solution-num">03</div>
-        <h3>Атмосфера бренда</h3>
-        <p>Цвет, типографика, изображения — всё создаёт ощущение вашего бизнеса: надёжность, точность, экспертность или тепло.</p>
+        <h3>Текст, который говорит на языке клиента</h3>
+        <p>Вместо «Мы печём вкусный хлеб» — «Тёплый круассан у вас на столе каждое утро к 7:30». Вместо «У нас современное оборудование» — «Точность диагностики до 0.1 мм, подтверждённая сертификатами». Клиент видит себя, свою проблему и её решение.</p>
       </div>
       <div class="solution-card">
         <div class="solution-num">04</div>
-        <h3>Кнопка целевого действия</h3>
-        <p>Один чёткий призыв к действию без путаницы. Клиент точно знает, что делать дальше: позвонить, написать, оставить заявку.</p>
+        <h3>Мобильная версия: не удобство, а прибыль</h3>
+        <p>60% ваших клиентов смотрят сайты с телефона. Если он неудобен — закроют за 3 секунды и уйдут к конкурентам. Мы делаем адаптацию, которая сохраняет логику, эстетику и скорость на любом экране.</p>
       </div>
       <div class="solution-card">
         <div class="solution-num">05</div>
-        <h3>Блоки доверия</h3>
-        <p>Цифры, кейсы, гарантии, отзывы — убираем все сомнения клиента до того, как они возникнут.</p>
+        <h3>Сайт, который отвечает на вопросы раньше вас</h3>
+        <p>Мы внедряем FAQ, кейсы и гарантии в логических точках — там, где у клиента возникает сомнение, тут же появляется доказательство. Сайт работает как вежливый, но настойчивый продавец, который никогда не устаёт.</p>
       </div>
       <div class="solution-card">
         <div class="solution-num">06</div>
-        <h3>Мобильная адаптация</h3>
-        <p>Сайт безупречно работает на любом устройстве. Ни один клиент не уйдёт из-за неудобного интерфейса на телефоне.</p>
+        <h3>Атмосфера, которую нельзя подделать</h3>
+        <p>Для стоматологии — ощущение стерильной чистоты и спокойствия. Для отеля — уютной роскоши. Для завода — индустриальной мощи и точности. Это невидимая работа, которая заставляет клиента выбрать именно вас.</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-num">07</div>
+        <h3>Скорость загрузки — ваш невидимый актив</h3>
+        <p>Сайт, который грузится дольше 3 секунд, теряет до 50% посетителей. Мы оптимизируем каждую страницу, чтобы она открывалась мгновенно — и как удобство для клиента, и как сигнал для поисковых систем.</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-num">08</div>
+        <h3>Первый экран, который продаёт без слов</h3>
+        <p>У вас есть ровно 3 секунды, чтобы захватить внимание. Мощный визуал, чёткий заголовок и один ясный призыв к действию. Без прокрутки, без лишних слов — только суть. Ваше цифровое рукопожатие.</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-num">09</div>
+        <h3>Доверие, которое строится на деталях</h3>
+        <p>Отзывы, кейсы и цифры размещаются не хаотично, а в управляемой логике: сомнение → факт → доверие → заявка. Каждый элемент доверия стоит ровно там, где клиент начинает колебаться.</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-num">10</div>
+        <h3>Ваш бизнес уникален. Сайт тоже должен быть таким</h3>
+        <p>Мы не используем шаблоны — это усреднённое решение. Анализируем вашу нишу, конкурентов и целевую аудиторию, чтобы создать сайт, который подчёркивает именно ваши сильные стороны. Как пошив костюма на заказ.</p>
       </div>
     </div>
   </div>
@@ -999,33 +1138,15 @@
 <section class="includes-section" id="includes">
   <div class="container">
     <div class="section-label">Состав услуги</div>
-    <h2>Что вы получаете<br>в <em>каждом проекте</em></h2>
+    <h2>Что входит<br><em>в работу над вашим сайтом</em></h2>
     <div class="includes-list">
       <div class="include-item">
         <div class="include-check">
           <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#0a0a0f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div>
-          <h3>Главный экран + несколько продающих блоков</h3>
-          <p>Полноценный одностраничный сайт со всеми необходимыми разделами: преимущества, услуги, цены, команда, контакты — всё что нужно именно вашему бизнесу.</p>
-        </div>
-      </div>
-      <div class="include-item">
-        <div class="include-check">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#0a0a0f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <h3>Маркетинговый анализ и смысловой текст</h3>
-          <p>Изучаем ваш бизнес, конкурентов и целевую аудиторию. Пишем тексты, которые говорят на языке клиента и закрывают его возражения.</p>
-        </div>
-      </div>
-      <div class="include-item">
-        <div class="include-check">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#0a0a0f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <h3>Дизайн в атмосфере вашего бренда</h3>
-          <p>Цветовая палитра, типографика, стиль изображений — всё создаёт правильное ощущение и выделяет вас среди конкурентов.</p>
+          <h3>Полноценный одностраничный сайт</h3>
+          <p>Главный экран + все продающие блоки: преимущества, услуги, цены, команда, FAQ, контакты — всё необходимое для вашей ниши.</p>
         </div>
       </div>
       <div class="include-item">
@@ -1034,16 +1155,7 @@
         </div>
         <div>
           <h3>Форма обратной связи</h3>
-          <p>Удобная форма для получения заявок прямо на сайте. Настраиваем уведомления на ваш Telegram или email.</p>
-        </div>
-      </div>
-      <div class="include-item">
-        <div class="include-check">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#0a0a0f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <h3>Полная адаптация под мобильные устройства</h3>
-          <p>Сайт корректно отображается и работает на смартфонах, планшетах и любых экранах без исключения.</p>
+          <p>Заявки прямо на сайте — с уведомлениями в Telegram или на email.</p>
         </div>
       </div>
       <div class="include-item">
@@ -1052,7 +1164,7 @@
         </div>
         <div>
           <h3>Базовая SEO-оптимизация</h3>
-          <p>Title, description, ключевые слова, корректная структура — сайт готов к продвижению в поисковиках с первого дня.</p>
+          <p>Title, description, структура заголовков, быстрая загрузка — сайт готов к продвижению с первого дня.</p>
         </div>
       </div>
     </div>
@@ -1063,7 +1175,7 @@
 <section class="process-section">
   <div class="container">
     <div class="section-label">Как мы работаем</div>
-    <h2>Простой процесс —<br><em>результат без стресса</em></h2>
+    <h2>Как мы работаем.<br><em>Прозрачно. По этапам:</em></h2>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">1</div>
@@ -1076,6 +1188,7 @@
         <p class="step-desc">Разрабатываем структуру сайта, пишем тексты и согласовываем с вами.</p>
       </div>
       <div class="process-step">
+
         <div class="step-num">3</div>
         <div class="step-title">Дизайн</div>
         <p class="step-desc">Создаём визуальное решение в вашем фирменном стиле или разрабатываем с нуля.</p>
@@ -1089,20 +1202,6 @@
   </div>
 </section>
 
-<!-- GUARANTEE -->
-<section class="guarantee-section">
-  <div class="container">
-    <div class="section-label">Гарантия</div>
-    <div class="guarantee-box">
-      <div class="guarantee-icon">🛡️</div>
-      <div>
-        <h3>Вносим правки до вашего «Да, это то что надо»</h3>
-        <p>Мы не сдаём работу и не исчезаем. Если после сдачи что-то не нравится по дизайну или тексту — дорабатываем. Наша репутация важнее скорости закрытия проекта. Один контакт на весь проект — MAX. Никаких менеджеров-прокладок.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PRICE -->
 <section class="price-section" id="price">
   <div class="container">
@@ -1110,7 +1209,7 @@
     <h2>Прозрачная<br><em>цена</em></h2>
     <div class="price-box">
       <div class="price-tag">от 25 000 ₽</div>
-      <p class="price-note">Итоговая стоимость зависит от сложности и объёма проекта. Обсуждаем индивидуально.</p>
+      <p class="price-note">Для сложных проектов — обсуждаем на созвоне</p>
       <div class="urgency-badge">🔥 Сейчас принимаем ограниченное число проектов</div>
       <div class="price-includes">
         <div class="price-include">Маркетинговый анализ и смысловые тексты</div>
@@ -1125,6 +1224,23 @@
     </div>
   </div>
 </section>
+
+<!-- QUOTE + PHOTO -->
+<div class="quote-section">
+  <div class="quote-wrap">
+    <div class="quote-photo">
+      <!-- ЗАМЕНИТЕ НА ФОТО: <img src="photo.jpg" alt="Юлия, основатель МСС"> -->
+      🖼️<br>ваше<br>фото
+    </div>
+    <div class="quote-text">
+      <blockquote>
+        «Вы создаете качество. Мы упаковываем его в смыслы так, чтобы вас выбирали без колебаний».
+      </blockquote>
+      <p class="quote-author">Юлия</p>
+      <p class="quote-role">Основатель МСС</p>
+    </div>
+  </div>
+</div>
 
 <!-- FAQ -->
 <section class="faq-section" id="faq">
@@ -1182,7 +1298,6 @@
           <div class="faq-a-inner">Да. Мы передаём вам полный доступ к сайту. Также обсуждаем удобную CMS (систему управления), если вы хотите редактировать контент самостоятельно без знания кода.</div>
         </div>
       </div>
-
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -1248,6 +1363,32 @@
   </div>
 </section>
 
+<!-- MANIFEST -->
+<section class="manifest-section" id="manifest">
+  <div class="container">
+    <div class="section-label">Манифест МСС</div>
+    <h2>Принципы,<br><em>в которые мы верим</em></h2>
+    <p class="section-desc">Это не просто слова. Это то, как мы работаем каждый день.</p>
+    <div class="manifest-grid">
+      <div class="manifest-card">
+        <div class="manifest-icon">⚡</div>
+        <h3>Аргументы</h3>
+        <p>«Мы готовим сайт как важную встречу: продумываем аргументы, предвосхищаем вопросы и создаём первое впечатление, которое невозможно игнорировать».</p>
+      </div>
+      <div class="manifest-card">
+        <div class="manifest-icon">🎨</div>
+        <h3>Дизайн вне трендов</h3>
+        <p>«Мы не гонимся за трендами. Мы создаём дизайн, который будет актуален, пока ваш бизнес растёт».</p>
+      </div>
+      <div class="manifest-card">
+        <div class="manifest-icon">💎</div>
+        <h3>Спокойная уверенность</h3>
+        <p>«Мы переводим ваш профессионализм на язык, понятный клиенту. Ясность, которая ведёт к действию».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT FORM -->
 <section class="form-section" id="contact">
   <div class="container">
@@ -1255,10 +1396,10 @@
       <div class="form-left">
         <div class="section-label">Контакты</div>
         <h2>Обсудим<br>ваш <em>проект</em></h2>
-        <p>Оставьте заявку — расскажите о бизнесе и задаче. Отвечаю лично, без менеджеров. Обычно в течение 1–2 часов.</p>
+        <p>Оставьте заявку — расскажите о бизнесе и задаче. Отвечает лично основатель МСС.</p>
         <div class="contact-lines">
           <div class="contact-line">
-            <span>💬 MAX:</span>
+            <span>💬 Telegram, MAX:</span>
             <strong><a href="https://max.ru/+79235703335">+7 923 570-33-35</a></strong>
           </div>
           <div class="contact-line">
@@ -1275,7 +1416,7 @@
         <label>Ваше имя</label>
         <input type="text" name="name" placeholder="Как вас зовут?" required>
 
-        <label>Телефон или MAX</label>
+        <label>Телефон или Telegram</label>
         <input type="text" name="contact" placeholder="+7 ___  или @username" required>
 
         <label>Сфера бизнеса</label>
@@ -1305,7 +1446,7 @@
       </form>
 
       <div class="success-msg" id="successMsg" style="grid-column: 2;">
-        ✅ Заявка отправлена! MAX свяжется с вами в ближайшее время.
+        ✅ Заявка отправлена! Свяжемся с вами в ближайшее время.
       </div>
     </div>
   </div>
@@ -1314,7 +1455,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">МСС·студия</div>
-  <p>Маркетинговые сайты со смыслом | MAX: <a href="https://max.ru/+79235703335" style="color:var(--accent); text-decoration:none;">+7 923 570-33-35</a> | <a href="tel:+79235703335" style="color:var(--accent); text-decoration:none;">+7 923 570-33-35</a></p>
+  <p>Маркетинговые сайты со смыслом | Telegram, MAX: <a href="https://max.ru/+79235703335" style="color:var(--accent); text-decoration:none;">+7 923 570-33-35</a> | <a href="tel:+79235703335" style="color:var(--accent); text-decoration:none;">+7 923 570-33-35</a></p>
   <p style="margin-top:0.5rem;">© 2025 МСС. Все права защищены.</p>
 </footer>
 
